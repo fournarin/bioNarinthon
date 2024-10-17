@@ -6,6 +6,7 @@
     --text2: #D9D9D9; /* สีข้อความรอง */
     --text1: #FFFFFF; /* สีข้อความหลัก */
     --red: #FF6F5B; /* แดงแหละ มั้ง */
+    --jim: #11b4e5; /* ตอนจิ้มข้อความ */
     --fs-18:1.125rem; /* มาจาก 18px หารด้วย ขนาดฟ้อนเริ่มต้น 16px */
     --fs-88:5.5rem;
     --fs-72:4.5rem;
@@ -14,6 +15,7 @@
     --fs-32:2rem;
     --fs-24:1.5rem;
     --container:69.375rem;/* มาจาก 1110px หารด้วย ขนาดฟ้อนเริ่มต้น 16px */
+    --transition: 250ms ease-in-out; /* ตั้งดีเลย์ */
 }
 
 html {
@@ -35,6 +37,35 @@ body {
     line-height: 1.56; /* ความห่างฟ้อน  */
 }
 
+a { /* ตั้งดีเลย์ */
+    transition: color var(--transition);
+}
+
+a:hover { /* เอาไปจิ้มแล้วเปลี่ยนสี */
+    color: var(--jim);
+}
+
+.visuallyhidden{ /* ซ่อน */
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.header_social { /* แสดงผลบนบล็อก */
+    display: inline-block;
+}
+
+.header_social > svg > path { /* แสดงผลบนบล็อก */
+    transition: fill var(--transition);
+}
+
+.header_social:hover > svg > path{ /* เอาไปจิ้มแล้วเปลี่ยนสี */
+    fill: var(--jim);
+}
+
 /* ช่องตรงใส่สกิล */
 .wrapper {
     width: calc(100% - 2rem) ; /* ความกว้าง */
@@ -47,4 +78,22 @@ body {
     .wrapper {
         width: calc(100% - 3.75rem)
     }
+}
+
+/* ส่วนหัว */
+/*
+heaer {
+
+}*/
+
+.header_nav { /* flex สำหรับมือถือ */
+    display: flex;
+}
+
+.header_home { /* ตรงคำว่า Narinthon Yangngam */
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.0229007633587786rem + 2.0035623409669211vw, 2rem); /* ได้จาก royalfig */
+    color: var(--text1);
+    text-decoration: none; /* ไม่ต้องขีดเส้นใต้ */
+    flex: 1 0 100%;
 }

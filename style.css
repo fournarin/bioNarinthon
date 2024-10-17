@@ -1,0 +1,50 @@
+:root {
+    /* ตั้งค่าสี */
+    --bg-body: #151515; /* สีพื้นหลังโดยรวม */
+    --bg-contact: #242424; /* สีพื้นหลังคอนแทค */
+    --accent: #9932CC; /* สีเส้น */
+    --text2: #D9D9D9; /* สีข้อความรอง */
+    --text1: #FFFFFF; /* สีข้อความหลัก */
+    --red: #FF6F5B; /* แดงแหละ มั้ง */
+    --fs-18:1.125rem; /* มาจาก 18px หารด้วย ขนาดฟ้อนเริ่มต้น 16px */
+    --fs-88:5.5rem;
+    --fs-72:4.5rem;
+    --fs-48:3rem;
+    --fs-40:2.5rem;
+    --fs-32:2rem;
+    --fs-24:1.5rem;
+    --container:69.375rem;/* มาจาก 1110px หารด้วย ขนาดฟ้อนเริ่มต้น 16px */
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,*::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    /* ฟ้อน Space Grotesk  */
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text1); /* สีฟ้อน  */
+    font-size: var(--fs-body); /* ขนาดฟ้อน  */
+    line-height: 1.56; /* ความห่างฟ้อน  */
+}
+
+/* ช่องตรงใส่สกิล */
+.wrapper {
+    width: calc(100% - 2rem) ; /* ความกว้าง */
+    max-width: var(--container); /* ความกว้างสูงสุด */
+    margin-inline: auto; /* ระยะขอบอัตโนมัติ */
+}
+
+/* สำหรับแท็ปเล็ต */
+@media (min-width: 37.5rem) { /* 600px */
+    .wrapper {
+        width: calc(100% - 3.75rem)
+    }
+}
